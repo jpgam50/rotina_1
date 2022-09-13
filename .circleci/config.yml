@@ -36,3 +36,16 @@ jobs:
             . venv/bin/activate
             cd model_package
             python -m modelo.treina_modelo
+
+      # Step 4: roda os testes do modelo
+      - run:
+          name: roda testes do modelo
+          command: |
+            . venv/bin/activate
+            cd model_package
+            python -m teste.test_previsoes -v
+
+
+
+
+
