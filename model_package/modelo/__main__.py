@@ -6,6 +6,7 @@ def main():
     print("Rodar:")
     print("--> python -m modelo.treina_modelo, para treinar o modelo")
     print("--> python -m modelo.preve_modelo, para prever com o modelo")
+    print("comentaraio para verificar a sobreposicao do packkote no gemfurry")
 
 
 
