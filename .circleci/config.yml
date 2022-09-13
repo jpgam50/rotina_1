@@ -1,0 +1,38 @@
+# Python CircleCI 2.0 configuration file
+version: 2
+
+#defaults: &defaults
+  #docker:
+  #  -image: cimg/python:3.10
+  #working_directory: ~/repo
+
+
+
+
+jobs:
+
+  build:
+    docker:
+      - image: cimg/python:3.10
+    working_directory: ~/repo
+
+    steps:
+      # Step 1: obtain repo from GitHub
+      - checkout
+
+      # Step 2: create virtual env and install dependencies
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r model_package/requirements.txt
+
+      # Step 3: treina o modelo
+      #. venv/bin/activate
+      - run:
+          name: treina o modelo
+          command: |
+            . venv/bin/activate
+            cd model_package
+            python -m modelo.treina_modelo
