@@ -53,4 +53,4 @@ jobs:
             python -m pip install build twine
             cd model_package
             python -m build
-            curl -F package=@$dist/NAME_PACKAGE $GEMFURRY_URL
+            curl -F package=@$"dist/$NAME_PACKAGE" "$GEMFURRY_URL"
