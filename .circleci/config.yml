@@ -45,7 +45,12 @@ jobs:
             cd model_package
             python -m teste.test_previsoes -v
 
-
-
-
-
+      # Step 5: constroi o pacote e publica
+      - run:
+          name: constroi o pacote e publica
+          command:
+            . venv/bin/activate
+            python -m pip install build twine
+            cd model_package
+            python -m build
+            curl -F package=@$dist/NAME_PACKAGE $GEMFURRY_URL
