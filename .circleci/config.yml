@@ -50,7 +50,10 @@ jobs:
           name: constroi o pacote e publica
           command: |
             . venv/bin/activate
+            chmod a+x envio_pacote.sh
             python -m pip install build twine
             cd model_package
             python -m build
-            curl -F package=@$"dist/$NAME_PACKAGE" "$GEMFURRY_URL"
+            envio_pacote.sh
+
+          #curl -F package=@$"dist/$NAME_PACKAGE" "$GEMFURRY_URL"
