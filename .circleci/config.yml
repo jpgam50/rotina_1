@@ -25,7 +25,7 @@ jobs:
           name: install dependencies
           command: |
             python3 -m venv venv
-           . venv/bin/activate
+            . venv/bin/activate
 
 
       #      pip install -r model_package/requirements.txt
