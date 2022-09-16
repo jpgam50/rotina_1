@@ -55,6 +55,6 @@ jobs:
             ls
             chmod a+x envio_pacote.sh
           #python -m build
-            ./envio_pacote.sh
+            envio_pacote.sh
 
           #curl -F package=@$"dist/$NAME_PACKAGE" "$GEMFURRY_URL"
