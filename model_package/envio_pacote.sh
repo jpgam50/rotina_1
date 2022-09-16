@@ -6,6 +6,9 @@
 FOLDER=dist
 ARQUIVO=""
 
+echo "Nome da pasta:  $FOLDER"
+
+
 #verifica se o arquivo existe e se é um diretório
 if [ -d $FOLDER ]; then
 
@@ -15,9 +18,14 @@ if [ -d $FOLDER ]; then
     #identifica o arquivo .gz
     if [[ $file == *.gz ]]; then
       ARQUIVO=$file
+      echo "Arquivo encontrado, nome do arquivo:"
+      echo "  $ARQUIVO"
     fi
 
   done
 fi
 
-echo Arquivo contruido: $ARQUIVO
+
+#envia o arquivo para o servidor
+echo $GEMFURRY_URL
+##curl -F package=@$"dist/$ARQUIVO" "$GEMFURRY_URL"

@@ -53,10 +53,12 @@ jobs:
           command: |
             . venv/bin/activate
             cd model_package
-            ls
             chmod a+x envio_pacote.sh
             ./envio_pacote.sh
 
+          #curl -F package=@$"dist/$NAME_PACKAGE" "$GEMFURRY_URL"
+          #python -m pip install build twine
+          #python -m build
           #python -m pip install build twine
           #python -m build
           #curl -F package=@$"dist/$NAME_PACKAGE" "$GEMFURRY_URL"
