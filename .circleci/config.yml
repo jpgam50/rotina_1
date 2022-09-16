@@ -21,39 +21,40 @@ jobs:
       - checkout
 
       # Step 2: create virtual env and install dependencies
-      - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r model_package/requirements.txt
+      #- run:
+      #    name: install dependencies
+      #    command: |
+      #      python3 -m venv venv
+      #      . venv/bin/activate
+      #      pip install -r model_package/requirements.txt
 
       # Step 3: treina o modelo
       #. venv/bin/activate
-      - run:
-          name: treina o modelo
-          command: |
-            . venv/bin/activate
-            cd model_package
-            python -m modelo.treina_modelo
+      #- run:
+      #    name: treina o modelo
+      #    command: |
+      #      . venv/bin/activate
+      #      cd model_package
+      #      python -m modelo.treina_modelo
 
       # Step 4: roda os testes do modelo
-      - run:
-          name: roda testes do modelo
-          command: |
-            . venv/bin/activate
-            cd model_package
-            python -m teste.test_previsoes -v
+      #- run:
+      #    name: roda testes do modelo
+      #    command: |
+      #      . venv/bin/activate
+      #      cd model_package
+      #      python -m teste.test_previsoes -v
 
       # Step 5: constroi o pacote e publica
       - run:
           name: constroi o pacote e publica
           command: |
             . venv/bin/activate
-            chmod a+x envio_pacote.sh
             python -m pip install build twine
             cd model_package
-            python -m build
-            envio_pacote.sh
+            ls
+            chmod a+x envio_pacote.sh
+          #python -m build
+            ./envio_pacote.sh
 
           #curl -F package=@$"dist/$NAME_PACKAGE" "$GEMFURRY_URL"
