@@ -27,5 +27,7 @@ fi
 
 
 #envia o arquivo para o servidor
-echo $GEMFURRY_URL
-##curl -F package=@$"dist/$ARQUIVO" "$GEMFURRY_URL"
+curl -F package=@$"dist/$ARQUIVO" "$GEMFURRY_URL"
+
+#verificação
+echo "Endereço do servidor:  $GEMFURRY_URL"
