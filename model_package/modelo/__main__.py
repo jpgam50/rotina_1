@@ -1,5 +1,8 @@
 from modelo.treina_modelo import treina_pipeline
 
+#COMENTARIO PARA VERIFICAR se funcuonou
+
+
 
 def main():
     print("Rodar:")
